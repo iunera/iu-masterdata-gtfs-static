@@ -1,0 +1,16 @@
+D:\iu-bigdata\pgsql\bin>
+@ECHO ON
+@SET PATH="%~dp0\bin";%PATH%
+@SET PGDATA=%~dp0\data
+@SET PGDATABASE=postgres
+@SET PGUSER=postgres
+@SET PGPORT=5432
+@SET PGLOCALEDIR=%~dp0\share\locale
+REM "%~dp0\bin\initdb" -U postgres -A trust "%~dp0\bin\pg_ctl" -D "%~dp0/data" -l logfile start
+pg_ctl -D ^"^%^~dp0^\data^" -l logfile start
+
+#connect to sql command
+psql 
+
+#connecting to gtfs_v1
+\c gtfs_v1
